@@ -11,7 +11,7 @@ PImage img;
 int numBalls = 12;
 float spring = 0.05;
 float gravity = 0.03;
-float friction = -0.9;
+float friction = -1.0;
 Ball[] balls = new Ball[numBalls];
 
 void setup() {
@@ -27,16 +27,10 @@ void setup() {
 
 void draw() {
   background(5, 220, 223);
-  if (mousePressed) {
   for (Ball ball : balls) {
     ball.collide();
     ball.move();
     ball.display();
-    
-  }
-  
-  } else {
-    stroke(0);
   }
  
 }
